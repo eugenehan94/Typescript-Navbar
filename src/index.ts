@@ -1,11 +1,16 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+const navToggle = document.querySelector<HTMLButtonElement>(".nav-toggle");
+const links = document.querySelector<HTMLUListElement>(".links")
 
-import confetti from 'canvas-confetti';
 
-confetti.create(document.getElementById('canvas') as HTMLCanvasElement, {
-  resize: true,
-  useWorker: true,
-})({ particleCount: 200, spread: 200 });
+navToggle?.addEventListener("click", () => {
+  console.log(links?.classList)
+
+  if (links?.classList.contains("show-links")){
+    links.classList.remove("show-links")
+  }else {
+    links?.classList.add("show-links")
+  }
+ // links?.classList.toggle("show-links");
+})
+
+export {}
